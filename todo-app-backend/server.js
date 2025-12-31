@@ -20,25 +20,47 @@ app.use(cookieParser())
 // logout ================
 app.post("/logout", async (req, resp) => {
 
-        resp.clearCookie("token", {
-            httpOnly: true,
-            secure: false,
-            sameSite: "lax"
-        })
-        resp.send({ msg: "Logged out", success: true })
-  
-})
-// ====================
+    resp.clearCookie("token", {
+        httpOnly: true,
+        secure: false,
+        sameSite: "lax"
+    })
+    resp.send({ msg: "Logged out", success: true })
 
+})
+// ===================================================
+
+// mark task completed ===============================
+app.get("/markDone/:id", async (req, resp) => {
+    try {
+        const db = await connection()
+        const collection = await db.collection(collectionName)
+
+        const result = await collection.updateOne({_id:new ObjectId(req.params.id)},{$set:{completed:true}})
+        resp.send({
+            success: true,
+            msg: "Data updated successfully!"
+        })
+
+    } catch (error) {
+        resp.send({
+            success: false,
+            msg: error.message
+        })
+    }
+})
+// ===================================================
 // Task list =========================================
 
-app.get("/task-list", verifyJWTToken, async (req, resp) => {
+app.post("/task-list", verifyJWTToken, async (req, resp) => {
 
     try {
         const db = await connection()
         const collection = await db.collection(collectionName)
 
-        const result = await collection.find().toArray()
+        const { email } = req.body;
+
+        const result = await collection.find({ user_email:email }).toArray()
 
         if (result) {
             resp.send({ message: "task-list fetched", success: true, result })
@@ -55,6 +77,7 @@ app.get("/task-list", verifyJWTToken, async (req, resp) => {
 
 // User Authentication ===================================
 
+// login=================================================
 app.post("/login", async (req, resp) => {
 
     try {
@@ -108,7 +131,9 @@ app.post("/login", async (req, resp) => {
     }
 
 })
+// =======================================================
 
+// signUp================================================
 
 app.post("/signUp", async (req, resp) => {
 
@@ -251,10 +276,6 @@ app.put("/update-tasks/:id", verifyJWTToken, async (req, resp) => {
 })
 // ===================================================
 
-app.get("/", (req, resp) => {
-    resp.send("Working...")
-})
-
 
 // token verifier middleware =====================
 
@@ -281,7 +302,10 @@ function verifyJWTToken(req, resp, next) {
 
 }
 // ===============================================
+app.get("/", (req, resp) => {
+    resp.send("Working...")
+})
 
 
 
-app.listen(5000)
+app.listen(5000, () => console.log("server is listening!"))
