@@ -1,0 +1,377 @@
+/* Home Page------------------------ */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    height: 70vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    place-self: center;
+    gap: 4rem;
+    margin-top: 4rem;
+
+}
+
+.welcome {
+    height: 80px;
+    min-width: 65vw;
+
+
+    font-size: 50px;
+    font-weight: 750;
+    margin-top: 2rem;
+
+
+    color: #212529;
+    box-shadow: #212529;
+    border-radius: 45px;
+
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    place-self: center;
+
+    transform: perspective(500px);
+    box-shadow: 0 0 20px rgba(212, 186, 220, 0.7);
+
+}
+
+
+.content-box-one {
+    display: flex;
+    gap: 1rem;
+}
+
+.content-box-one img {
+    height: 60px;
+    width: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    place-self: center;
+}
+
+.content-box-one span {
+    font-size: 25px;
+    font-weight: 650;
+}
+
+.content-box-one div {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.content-box-two {
+    display: flex;
+    gap: 1rem;
+
+}
+
+.content-box-two img {
+    height: 60px;
+    width: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    place-self: center;
+}
+
+.content-box-two span {
+    font-size: 25px;
+    font-weight: 650;
+}
+
+.content-box-two div {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+#continue {
+    height: 60px;
+    width: 30vw;
+    place-self: center;
+    background-color: #06bdc3;
+    font-size: 25px;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
+#continue:hover {
+
+    border-radius: 28px;
+    background-color: #99d98c;
+
+}
+
+/* --------------------------------------------- */
+
+/* =================  Task Creation page ======================= */
+
+.task-page {
+    height: 100vh;
+    width: 90%;
+    border-radius: 40px;
+
+    margin-top: 1.2rem;
+    display: flex;
+    gap: 1rem;
+
+    flex-direction: column;
+    place-self: center;
+
+
+}
+
+.box-one {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.box-one input {
+
+    height: 3rem;
+    width: 100%;
+
+    border: 2.5px solid rgba(38, 36, 36, 0.888);
+
+    font-size: clamp(16px, 18px, 25px);
+    line-height: 1.5;
+    font-weight: 600;
+    padding: 0.8rem;
+    border-radius: 35px;
+    background-color: #fff;
+}
+
+
+
+.box-one img {
+
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+
+    box-shadow:
+        0 3px 0 #825feb,
+        /* bottom shadow */
+        0 6px 8px rgba(0, 0, 0, 0.35);
+
+}
+
+.box-one img:active {
+
+    transform: translateZ(-30px);
+    box-shadow:
+        0 2px 0 #8b5cf6,
+        0 4px 8px rgba(0, 0, 0, 0.3);
+
+}
+
+.tasks-list {
+
+    height: fit-content;
+    width: 94%;
+
+    background-color: #fff;
+    border-radius: 35px;
+    font-size: 18px;
+    font-weight: 500;
+
+    padding: 3px 3px 3px 20px;
+    border: 2px solid orange;
+
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+
+    word-break: break-word;     
+    overflow-wrap: anywhere;
+
+}
+
+
+
+/* =============================================================== */
+
+/* delete button */
+#remove-btn {
+    background-color: rgb(216, 74, 74);
+    border-radius: 6px;
+    font-size: auto;
+    width: auto;
+    height: 1.5rem;
+    
+    font-weight: 500;
+    margin: 0.3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 3rem;       
+    padding: 4px 8px;     
+    white-space: nowrap; 
+
+    margin:0.3rem 0.3rem 0.3rem 0.3rem;
+
+}
+
+#remove-btn:hover {
+    background-color: rgb(185, 0, 0);
+}
+
+/* ========================= */
+
+/* Update button */
+#update-btn {
+    background-color: rgb(13, 211, 13);
+    border-radius: 6px;
+    font-size: auto;
+    width: auto;
+    height: 1.5rem;
+    
+    font-weight: 500;
+    margin: 0.3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 3rem;       
+    padding: 4px 8px;     
+    white-space: nowrap; 
+
+}
+
+#update-btn:hover {
+    background-color: rgb(3, 121, 3);
+}
+
+/* ============================ */
+
+/* Done button */
+#done-btn {
+    background-color: rgb(26, 160, 218);
+    border-radius: 6px;
+    font-size: auto;
+    width: auto;
+    height: 1.5rem;
+
+    font-weight: 500;
+    margin: 0.3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 3rem;       
+    padding: 4px 8px;     
+    white-space: nowrap; 
+
+}
+
+#update-btn:hover {
+    background-color: rgb(3, 121, 3);
+}
+
+#done-btn:hover {
+    background-color: rgb(4, 103, 130);
+}
+
+.tasks-list-done {
+
+    height: fit-content;
+    min-width: fit-content;
+    max-width: 93%;
+
+    background-color: #fff;
+    border-radius: 40px;
+    font-size: 20px;
+    font-weight: 550;
+
+    padding: 5px 5px 5px 25px;
+    border: 2px solid orange;
+
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+
+    word-break: break-word;      
+    overflow-wrap: anywhere;
+
+    /* ===================================== */
+    text-decoration: line-through;
+    background-color: #dcfce7;
+    opacity: 0.7;
+    /* ===================================== */
+    
+}
+
+/* =================================== */
+.btns {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;  
+
+    align-items: center;
+    justify-content: center;
+    white-space:nowrap;
+    word-break: keep-all;
+}
+
+.login-signup-btns{
+    place-self: center;
+}
+
+.links{
+    font-weight: 700;
+    font-size: 28px;
+        
+}
+
+.warning{
+    color:rgb(225, 8, 8);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+@media (min-width: 344px) and (max-width : 768px) {
+    .welcome {
+        flex-wrap: wrap;
+        font-size: 1.7rem;
+        min-width: 90vw;
+    }
+
+    .container {
+        flex-direction: column;
+        flex-shrink: 1;
+        font-size: auto-fit;
+    }
+
+    #continue {
+        min-width: 40vw;
+    }
+
+    .task-prompt {
+        min-width: 100%;
+        min-height: 22%;
+        font-optical-sizing: auto;
+    }
+
+    .add-task img {
+        min-width: 40px;
+        min-height: 40px;
+    }
+    .links{
+        font-size: 25px;
+    }
+    .tasks-list ,.tasks-list-done{
+           font-size: 15px;
+           font-weight: 480;
+    } 
+}

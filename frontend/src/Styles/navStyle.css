@@ -1,0 +1,33 @@
+.nav {
+    height: 2.1rem;
+    width: 100vw;
+  
+    margin-top: 0px;
+    position: sticky;
+
+    display: flex;
+    flex-direction: row-reverse;
+
+    background-color: #111827;
+    justify-content: space-between;
+}
+
+
+
+.logout {
+
+    text-decoration: none;
+    font-weight: 550;
+
+    font-size: 16px;
+    color: #F9FAFB;
+    padding: 2px 2px 2px 2px;
+
+    margin-right: 2rem;
+
+}
+
+.logout:hover {
+    text-decoration: underline;
+    color : #60A5FA;
+}
