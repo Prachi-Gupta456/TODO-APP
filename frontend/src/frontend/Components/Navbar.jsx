@@ -8,7 +8,8 @@ function Navbar() {
     const handleLogout = async () => {
 
         const result = await fetch("http://localhost:5000/logout",{
-            method:"POST"
+            method:"POST",
+            credentials:"include"
         })
         localStorage.removeItem('login')
         
